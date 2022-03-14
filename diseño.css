@@ -1,0 +1,621 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+/*Como el codigo aun no es responsive, funciona bien en 1301 x 797*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Fredoka', sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    background-color:rgba(243, 243, 243,0.6);
+    position: fixed; /*para que se quede pegado*/
+    top: 0;
+    left: 0;
+    z-index: 100; /*para que siempre este por delante de los demas elementos y tape los demas elementos en el responsive celular*/
+
+}
+
+header h1{
+    color:#0030f1; /*Color de vaccination*/
+    padding-left: 5px;
+    padding-top: 10px
+}
+
+h1{
+    float: left;
+}
+
+.contenedor{
+    width: 98%;
+    margin: auto;
+}
+
+/*----------------------------------------------MENU-----------------------------------------------------------*/
+#menubar{
+ display: none;
+}
+
+header label{ /*icono de las 3 barras*/
+    float: right;
+    font-size: 29px;
+    padding-top: 8px;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+.menu{
+    position: absolute;
+    width: 100%;
+    height: 100vh;/*100% del alto de la ventana*/
+    background-color: rgba(243, 243, 243,0.6);
+    top: 50px;
+    left: 0;
+    transition: 1s;
+    transform: translateX(-100%);
+}
+
+.menu a{
+    display: block;
+    color: rgb(102, 99, 99);
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px rgba(255, 255, 255,0.2);
+}
+
+.menu button{
+    margin-top: 7px;
+    width: 140px;
+    height: 35px;
+    line-height: 20px;
+    background:#2949c7;
+    color: rgba(243, 243, 243,0.6);
+    border:1px solid rgba(243, 243, 243,0.6);
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.menu a:hover{
+    background-color:rgba(243, 243, 243,0.6) ;
+}
+
+#menubar:checked ~ .menu{
+    transform: translateX(0%);
+}
+
+.encimar{
+    position:absolute;
+    transform:translate(-50%,-50%); /*Que las cosas se vayan poniendo encima una de otra */
+}
+
+@media (min-width:1024px) {
+    .menu {
+        position: static;
+        width:auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+    }
+
+    .menu a{
+        border:none;
+    }
+
+    header label{
+        display: none
+    }
+
+}
+
+/*----------------------------------------------Banner principal-----------------------------------------------------------*/
+section{
+    width: 100%;
+    margin-bottom: 15px; /*cuando hay mas contenido abajo, deje espacio todos los sections*/
+}
+
+.banner{
+    margin-top: 50px;
+    position: relative;
+}
+
+.banner img{
+    width: 50%;
+    height: 20%;
+    margin-left: 50%;
+}
+
+.contenedorbanner{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+}
+
+.contenedorbanner h1{
+    color: #1f3e72;
+    font-size:60px;
+    font-weight: bolder;
+}
+
+.abajocontenedor p{
+    position: absolute;
+    top: 43%;
+    padding-left: 5%;
+    color: gray;
+    font-size: 22px;
+}
+
+.iconoescudo p{
+    position: absolute;
+    top: 60%;
+    padding-left: 5%;
+    color: yellow;
+}
+
+#estrella{
+    position: absolute;
+    top: 60%;
+    padding-left: 20%;
+    color: yellow;
+}
+
+.letrasconiconos1{
+    position: absolute;
+    top: 60%;
+    padding-left: 8%;
+    font-weight:600;
+    color: rgb(34, 25, 109);
+}
+
+.letrasconiconos2{
+    position: absolute;
+    top: 60%;
+    left: 23%;
+    font-weight:600;
+    color: rgb(34, 25, 109);
+}
+
+.iconoreloj h3{
+    position: absolute;
+    top: 83%;
+    padding-left: 5%;
+    color: #1f3e72;
+}
+
+.rectanguloblancofondo{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      position: absolute;
+      left: 15%;
+      top: 87%;
+      width: 800px;
+      height: 110px;
+      border-radius: 7px;
+      background-color: #fff;
+      box-shadow: 3px 3px 8px rgb(191 197 212);
+  }
+
+  .rectanguloblancofondo p{
+      font-size: 23px;
+      font-weight: bold;
+      color:#1f3e72
+  }
+
+  .rectanguloblancofondo label{
+    font-size: 18px;
+    font-weight: bold;
+    color:#888e9b;
+}
+
+.botonsito{
+    width: 150px;
+    line-height: 40px;
+    background:#2a4ac8;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+/*----------------------------------------------MARCAS-----------------------------------------------------------*/
+.marcas{
+    position: relative; /*Posicion relativa, es decir dentro de esta seccion el 0% es hasta arriba y 100% hasta abajo, ignorando la pasada */
+}
+.cuadropmarcas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: 5%;
+    left: 29%;
+    width: 900px;
+    height: 200px;
+    /*background-color: #2a4ac8;*/
+}
+
+.logos{
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 170px;
+}
+
+.derecha{
+    margin-left: 34%;
+}
+
+/*----------------------------------------------Seccion debajo de marcas-----------------------------------------------------------*/
+
+.block{ /*Sirve para escribir en distintas lineas, una abajo de otra*/
+    display: block;
+}
+
+.section2text{
+    width: 902px;
+    position: absolute;
+    margin-top: -20%;
+    margin-left: 20%;
+}
+
+.section2text h2{
+    color: #1f3e72;
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+.section2text p{
+    font-size: 18px;
+    font-weight: bold;
+    color:#888e9b;
+}
+
+.contenedor4{
+    position: absolute;
+    margin-top: -8%;
+    margin-left: 25%;
+    width: 890px;
+    height: 250px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px rgb(191 197 212);
+}
+
+.cuadrosen4{
+    width: 200px;
+    height: 230px;
+    border: 1px solid rgba(128, 128, 128, 0.151);
+    border-radius: 4px;
+    box-shadow: 0 2px 2px rgb(0 0 255 / 26%);
+    margin: 10px;
+    text-align: center;
+    background-color: #fbfcfe;
+    box-shadow: 3px 3px 8px rgb(191 197 212);
+}
+
+.cuadrosen4 i{
+    position: absolute;
+    margin-top: 3%;
+    margin-left: -80px;
+    border: 1px solid rgba(0, 0, 255, 0.062);
+    border-radius: 8px;
+    color: #1f3e72;
+    background: rgba(15, 15, 160, 0.082);
+    font-size: 20px;
+    box-shadow: 0 2px 2px rgb(0 0 139 / 21%);
+}
+
+.cuadrosen4 h3{
+    margin-top: 35%;
+    font-size:18px;
+    color: #1f3e72;
+    padding: 0 10px;
+    text-align: left;
+}
+
+.cuadrosen4 p{
+    padding: 10px 0 0 10px ;
+    text-align: left;
+    color: #77849b;
+}
+
+/*----------------------------------------------Preparaciones-----------------------------------------------------------*/
+.preparaciones{
+    position: relative;
+    top: 100px;
+}
+
+
+.chica{
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    position: relative;
+}
+
+.cuadrado{
+    position: absolute;
+    margin-top: -80%;
+    margin-left: 55%;
+    width: 500px;
+    height: 250px;
+}
+
+.cuadrado h2{
+    color: #1f3e72;
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+.cuadrado p{
+    font-size: 18px;
+    font-weight: bold;
+    color:#888e9b;
+}
+
+/*----------------------------------------------Flexbox debajo de texto preparaciones------------------------------------------------------*/
+
+.cont5{
+    position: absolute;
+    margin-top: -57%;
+    margin-left: 55%;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.rectangulosencont5{
+    width: 480px;
+    height: 230px;
+    border: 1px solid rgba(128, 128, 128, 0.151);
+    border-radius: 4px;
+    box-shadow: 0 2px 2px rgb(0 0 255 / 26%);
+    margin: 10px;
+    text-align: center;
+    background-color: #fbfcfe;
+    box-shadow: 3px 3px 8px rgb(191 197 212);
+}
+
+.rectangulosencont5 i{
+    position: absolute;
+    margin-top: 5%;
+    margin-left: -220px;
+    border: 1px solid rgba(0, 0, 255, 0.062);
+    border-radius: 8px;
+    color: #1f3e72;
+    background: rgba(15, 15, 160, 0.082);
+    font-size: 20px;
+    box-shadow: 0 2px 2px rgb(0 0 139 / 21%);
+}
+
+.rectangulosencont5 p{/*---Icono de la flecha hacia abajo-*/
+    position: absolute;
+    margin-top: -4%;
+    margin-left: 80%;
+    color: #1f3e72;
+    font-size: 20px;
+}
+
+.rectangulosencont5 h3{
+    margin-top: 5%;
+    margin-left: 15%;
+    font-size:18px;
+    color: #1f3e72;
+    padding: 0 10px;
+    text-align: left;
+    font-weight:600
+}
+
+/*----------------------------------------------Para la seccion de contacto emergencia------------------------------------------------------*/
+
+.emergencycontact{
+    position: relative;
+    top: -50px;
+}
+
+.emergencytext{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 500px;
+    height: 180px;
+    /*background-color: #0030f1;*/
+}
+
+.emergencytext h2{
+    color: #1f3e72;
+    font-size: 32px;
+    font-weight: bolder
+}
+
+.emergencytext p{
+    font-size: 18px;
+    font-weight: bold;
+    color:#888e9b;
+}
+
+.enfermero{
+    position: absolute;
+    max-width: 850px;
+    max-height: 1000px;
+    margin-left:79%;
+    top: 30%;
+}
+
+
+.contenedorcontactos{
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    width: 430px;
+    height: 410px;
+    /*background-color: #1f3e72;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.contactos4{
+    width: 180px;
+    height: 170px;
+    border: 1px solid rgba(128, 128, 128, 0.151);
+    border-radius: 4px;
+    box-shadow: 0 2px 2px rgb(0 0 255 / 26%);
+    margin: 10px;
+    text-align: center;
+    background-color: #fbfcfe;
+    box-shadow: 3px 3px 8px rgb(191 197 212);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contactos4 i{
+    position: absolute;
+    margin-top: 8%;
+    margin-left: 5%;
+    border: 1px solid rgba(0, 0, 255, 0.062);
+    border-radius: 8px;
+    color: #1f3e72;
+    background: rgba(15, 15, 160, 0.082);
+    font-size: 30px;
+    box-shadow: 0 2px 2px rgb(0 0 139 / 21%);
+}
+
+.contactos4 h3{
+    margin-top: 16%;
+    margin-left: 38%;
+    font-size:18px;
+    color: #1f3e72;
+    padding: 0 10px;
+    text-align: left;
+    font-weight:600
+}
+
+.contactos4 p{
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 16%;
+    font-size:13px;
+    color: #808ca1;
+    padding: 0 10px;
+    text-align: top;
+    font-weight:600
+}
+
+.contactos4 button{
+    width: 140px;
+    margin-left: 10%;
+    margin-top: 5%;
+    height: 50px;
+    color: #2e4ecc;
+    border-radius: 4px;
+    font-size: 18px;
+    border:1px solid #f1f5ff;
+    background-color: #f1f5ff;
+}
+
+/*----------------------------------------------Footer------------------------------------------------------*/
+.footer{
+    width: 500px;
+    position: relative;
+}
+
+.marca{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 300px;
+    height: 180px;
+    /*background-color: yellowgreen;*/
+}
+
+.marca h1{
+    color:#0030f1;
+}
+
+.marca p{
+    color: #78869c;
+    font-size: 16px;
+}
+
+.division{
+    position: absolute;
+    top: 20%;
+    left: 250%;
+    width: 500px;
+    height: 180px;
+    /*background-color:yellowgreen;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.info{
+    position: relative;
+    top: 3%;
+    width: 120px;
+    height: 170px;
+    /*background-color: #fff;*/
+}
+
+.info h2{
+    color: #1f3e72;
+    font-weight: 900;
+    font-size: 22px;
+}
+
+.info p{
+    color: #78869c;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.reserved p{
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    width: 300px;
+    height: 20px;
+    color: #78869c;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.reserved2{
+    position: absolute;
+    top: 80%;
+    left: 300%;
+    width: 300px;
+    height: 20px;
+    /*background-color: #0030f1;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.reserved2 p{
+    color: #78869c;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+
